@@ -3,8 +3,8 @@
 A modern, responsive contact management web application built with **React** and **Tailwind CSS**.  
 It allows users to view, search, and add contacts seamlessly — integrating both API-fetched and manually added contacts stored locally in the browser.
 
-Dummy API used-https://randomuser.me/
-**Live Demo:** [https://your-app-name.vercel.app]
+-Dummy API used-https://randomuser.me/
+-**Live Demo:** [https://tria-react-assignment.vercel.app/]
 
 ### Features
 - 🔍 Search and filter contacts by name.
@@ -35,10 +35,10 @@ src/
 ### Setup Instructions
 
 1. **Clone the repository**
-   git clone https://github.com/dhruvgupta-14/tria-react-assignment
-   cd tria-react-assignment
-   npm install
-   npm run dev
+   - git clone https://github.com/dhruvgupta-14/tria-react-assignment
+   - cd tria-react-assignment
+   - npm install
+   - npm run dev
 
 ### Assumptions & Design Choices
 - The app fetches a limited number of contacts (default 10) from the Random User API for demonstration.
