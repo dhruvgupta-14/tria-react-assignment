@@ -54,14 +54,14 @@ const ContactCard = ({ user }) => {
             <div className="relative bg-background rounded-2xl p-4 sm:p-6 w-full max-w-md sm:max-w-lg shadow-2xl transition-all duration-300 overflow-auto max-h-[90vh]">
               <button
                 onClick={handleClose}
-                className="absolute top-3 right-3 text-gray-500 hover:text-primary transition-colors"
+                className="absolute top-3 right-3 text-gray-500 hover:text-primary transition-colors cursor-pointer"
               >
                 <AiOutlineClose size={22} />
               </button>
 
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
                 <img
-                  src={user.picture.large}
+                  src={user.picture.medium}
                   alt={user.name.first}
                   className="rounded-full w-20 h-20 sm:w-24 sm:h-24 object-cover border-2 border-primary"
                 />

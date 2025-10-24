@@ -32,7 +32,7 @@ const ContactSection = () => {
 
   return (
     <section className="w-full bg-primary/50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 -mt-15">
-      <div className="max-w-6xl mx-auto text-center sm:text-left">
+      <div className="max-w-7xl mx-auto text-center sm:text-left">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
           Your Contacts
         </h1>
@@ -50,7 +50,7 @@ const ContactSection = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8 animate-slide-up">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8 md:mt-12 animate-slide-up">
           {loading
             ? Array.from({ length: 8 }).map((_, i) => (
                 <ContactCardSkeleton key={i} />
