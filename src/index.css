@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+@theme {
+  --color-text: var(--text);
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+}
+
+@layer base {
+  :root {
+    --font-logo: "Pacifico", cursive;
+    --font-ui: "Poppins", sans-serif;
+    --text: #040316;
+    --background: #fbfbfe;
+    --primary: #2f27ce;
+    --secondary: #dddbff;
+    --accent: #443dff;
+  }
+
+  .dark {
+    --font-logo: "Pacifico", cursive;
+    --font-ui: "Poppins", sans-serif;
+    --text: #eae9fc;
+    --background: #010104;
+    --primary: #3a31d8;
+    --secondary: #020024;
+    --accent: #0600c2;
+  }
+  body {
+    font-family: var(--font-ui);
+    background-color: var(--background);
+    color: var(--text);
+  }
+
+  .font-logo {
+    font-family: var(--font-logo);
+  }
+}
+@layer utilities {
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 10px 0 rgba(67, 61, 255, 0.5); /* accent color */
+    }
+    50% {
+      box-shadow: 0 0 20px 10px rgba(67, 61, 255, 0.7);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  /* 🌙 Fade Out Animation */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+  .animate-fadeOut {
+    animation: fadeOut 0.3s ease-in forwards;
+  }
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .animate-skeleton {
+    background: linear-gradient(
+      90deg,
+      rgba(229, 231, 235, 0.7) 25%,
+      rgba(243, 244, 246, 1) 50%,
+      rgba(229, 231, 235, 0.7) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s infinite;
+  }
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+}
