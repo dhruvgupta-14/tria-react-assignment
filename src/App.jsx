@@ -8,7 +8,7 @@ import { ContactsProvider } from "./context/ContactContext";
 const App = () => {
   return (
     <ContactsProvider>
-      <div className="bg-background min-w-screen min-h-screen text-text overflow-x-hidden">
+      <div className="bg-background w-screen min-h-screen text-text overflow-x-hidden">
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:18px_24px] [mask-image:radial-gradient(ellipse_70%_80%_at_60%_0%,#000_70%,transparent_100%)]"></div>
 

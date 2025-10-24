@@ -14,15 +14,15 @@ const AddContactModal = () => {
     email: "",
     cell: "",
     phone: "",
-    streetName:"",
-    streetNum:"",
-    state:"",
-    postcode:"",
+    streetName: "",
+    streetNum: "",
+    state: "",
+    postcode: "",
     city: "",
     country: "",
-    dob:"",
-    age:"",
-    avatar:"",
+    dob: "",
+    age: "",
+    avatar: "",
   });
 
   if (!showFormModal) return null;
@@ -32,43 +32,46 @@ const AddContactModal = () => {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const newContact = {
-    name: {
-      title: formData.title,
-      first: formData.first,
-      last: formData.last,
-    },
-    email: formData.email,
-    cell: formData.cell,
-    phone: formData.phone,
-    location: {
-      street: {
-        number: formData.streetNum || 0,
-        name: formData.streetName || "",
+    const newContact = {
+      name: {
+        title: formData.title,
+        first: formData.first,
+        last: formData.last,
       },
-      city: formData.city,
-      state: formData.state || "",
-      country: formData.country,
-      postcode: formData.postcode || "",
-    },
-    dob: {
-      date: formData.dob ? new Date(formData.dob).toISOString() : new Date().toISOString(),
-      age: formData.dob ? new Date().getFullYear() - new Date(formData.dob).getFullYear() : 0,
-    },
-    picture: {
-      medium: formData.avatar 
-    },
+      email: formData.email,
+      cell: formData.cell,
+      phone: formData.phone,
+      location: {
+        street: {
+          number: formData.streetNum || 0,
+          name: formData.streetName || "",
+        },
+        city: formData.city,
+        state: formData.state || "",
+        country: formData.country,
+        postcode: formData.postcode || "",
+      },
+      dob: {
+        date: formData.dob
+          ? new Date(formData.dob).toISOString()
+          : new Date().toISOString(),
+        age: formData.dob
+          ? new Date().getFullYear() - new Date(formData.dob).getFullYear()
+          : 0,
+      },
+      picture: {
+        medium: formData.avatar,
+      },
+    };
+
+    addContact(newContact);
+    toggleFormModal();
   };
 
-  addContact(newContact);
-  toggleFormModal();
-};
-
-
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-background p-6 rounded-2xl w-full max-w-3xl relative shadow-2xl border border-gray-200 dark:border-gray-700">
         <button
           onClick={toggleFormModal}
@@ -81,7 +84,10 @@ const AddContactModal = () => {
           Add New Contact
         </h2>
 
-        <form className="grid grid-cols-3 gap-4" onSubmit={handleSubmit}>
+        <form
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+          onSubmit={handleSubmit}
+        >
           {/* Title */}
           <div className="flex flex-col">
             <label className="text-sm font-medium text-gray-600 mb-1">
@@ -98,6 +104,7 @@ const AddContactModal = () => {
               <option value="Mrs">Mrs</option>
             </select>
           </div>
+
           {/* Name Fields */}
           <InputField
             label="First Name"
@@ -113,6 +120,7 @@ const AddContactModal = () => {
             onChange={handleChange}
             required
           />
+
           {/* Contact Info */}
           <InputField
             label="Email"
@@ -184,8 +192,10 @@ const AddContactModal = () => {
             onChange={handleChange}
             required
           />
+
+          {/* Avatar */}
           <InputField
-            className="col-span-2"
+            className="col-span-1 sm:col-span-2 md:col-span-3"
             label="Avatar"
             name="avatar"
             value={formData.avatar}
@@ -196,7 +206,7 @@ const AddContactModal = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="bg-primary text-white col-span-3 px-4 py-2 rounded-lg hover:bg-primary/80 transition-all mt-2"
+            className="bg-primary text-white col-span-1 sm:col-span-2 md:col-span-3 px-4 py-2 rounded-lg hover:bg-primary/80 transition-all mt-2"
           >
             Add Contact
           </button>
