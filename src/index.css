@@ -28,6 +28,16 @@
     --secondary: #020024;
     --accent: #0600c2;
   }
+  
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+  }
+
+
   body {
     font-family: var(--font-ui);
     background-color: var(--background);

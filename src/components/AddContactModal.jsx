@@ -72,7 +72,7 @@ const AddContactModal = () => {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-background p-6 rounded-2xl w-full max-w-3xl relative shadow-2xl border border-gray-200 dark:border-gray-700">
+      <div className="bg-background p-6 rounded-2xl w-full max-w-3xl relative shadow-2xl border border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
         <button
           onClick={toggleFormModal}
           className="absolute top-3 right-3 text-gray-500 hover:text-primary transition-colors"
