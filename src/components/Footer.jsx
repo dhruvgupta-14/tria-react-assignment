@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
 
           <a
-            href="https://portfolio-1d43v5m4c-dhruvgupta-14s-projects.vercel.app/" // update later
+            href="https://portfolio-three-roan-57.vercel.app/" // update later
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 text-sm sm:text-base text-primary hover:text-accent underline"
